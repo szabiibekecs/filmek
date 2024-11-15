@@ -11,16 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('movies', function (Blueprint $table) {
+        Schema::create('ganres', function (Blueprint $table) {
             $table->id();
-            $table->string("cim");
-            $table->string("rendezo");
-            $table->unsignedBigInteger("ganre_id");
-            $table->integer("megjelenes");
+            $table->string("nev");
             $table->softDeletes();
             $table->timestamps();
-
-            $table->foreign("ganre_id")->references("id")->on("genres")->onDelete("cascade");
         });
     }
 
@@ -29,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('movies');
+        Schema::dropIfExists('ganres');
     }
 };

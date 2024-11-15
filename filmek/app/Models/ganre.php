@@ -11,6 +11,11 @@ class ganre extends Model
     use HasFactory,SoftDeletes;
 
     protected $fillable = [
+        "movie_id",
         "mufaj_nev"
     ];
+
+    public function movie(){
+        return $this->hasMany(Movie::class);
+    }
 }

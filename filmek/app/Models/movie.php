@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -12,12 +11,16 @@ class movie extends Model
     protected $fillable = [
         "cim",
         "rendezo",
-        "ganre-id",
         "megjelenes"
     ];
 
     public function ganre()
     {
-        return $this->hasOne(ganre::class);
+        return $this->belongsTo(Ganre::class);
+    }
+
+    public function reserve(){
+        return $this->hasMany(Reserve::class);
     }
 }
+

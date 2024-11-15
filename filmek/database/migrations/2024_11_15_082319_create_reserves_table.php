@@ -13,13 +13,14 @@ return new class extends Migration
     {
         Schema::create('reserves', function (Blueprint $table) {
             $table->id();
-            $table->string("foglalo_nev");
-            $table->unsignedBigInteger("movie_id");
-            $table->date("kiad");
-            $table->date("visszahoz");
+            $table->string("nev");
+            $table->unsignedBigInteger("film_id");
+            $table->date("be");
+            $table->date("ki");
+            $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign("movie-id")->references("id")->on("movies")->onDelete("cascade");
+            $table->foreign("film_id")->references("id")->on("movies");
         });
     }
 
