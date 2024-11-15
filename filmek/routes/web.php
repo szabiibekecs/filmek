@@ -15,6 +15,8 @@ Route::post('/new-genre', [GanreController::class, 'store'])->name('movies.gcrea
 Route::get('/new-film', [MovieController::class, 'create'])->name('movies.fcreate.index');
 Route::post('/new-film', [MovieController::class, 'store'])->name('movies.fcreate.store');
 
+Route::get('/films', [MovieController::class, 'show'])->name('movies.films.show');
+
 
 
 

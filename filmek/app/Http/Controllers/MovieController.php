@@ -13,6 +13,7 @@ class MovieController extends Controller
         return view('movies.fcreate', compact('genres'));
     }
 
+
     public function store(Request $request){
         $request->validate([
             "cim" => 'required|string|max:255',
@@ -24,5 +25,11 @@ class MovieController extends Controller
         Movie::create($request->all());
 
         return redirect()->back()->with('success','movie stored');
+    }
+
+    public function show(){
+        $genres = Ganre::all();
+        $movies = Movie::all();
+        return view('movies.fcreate', compact('genres','movies'));
     }
 }

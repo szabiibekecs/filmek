@@ -19,8 +19,13 @@
     <form action="" method="post">
         @csrf
         <h1>Film madatok:</h1>
+        @foreach($genres as $genre)
+            <p>{{$genre->nev}}</p>
+        @endforeach
         @foreach($movies as $movie)
-        
+            <p>{{$movie->cim}}</p>
+            <p>{{$movie->rendezo}}</p>
+            <p>{{$movie->megjelenes}}</p>
         @endforeach
     </form>
 
