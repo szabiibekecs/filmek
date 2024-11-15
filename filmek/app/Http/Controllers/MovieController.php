@@ -9,7 +9,8 @@ use App\Models\Ganre;
 class MovieController extends Controller
 {
     public function create(){
-        return view('movies.fcreate');
+        $genres = Ganre::all();
+        return view('movies.fcreate', compact('genres'));
     }
 
     public function store(Request $request){
@@ -23,10 +24,5 @@ class MovieController extends Controller
         Movie::create($request->all());
 
         return redirect()->back()->with('success','movie stored');
-    }
-
-    public function show(Ganre $ganres){
-        $ganres = Ganre::all();
-        return view('movies.fcreate', compact('ganres'));
     }
 }

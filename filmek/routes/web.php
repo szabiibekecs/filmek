@@ -11,6 +11,7 @@ Route::get('/', function () {
 
 Route::get('/new-genre', [GanreController::class, 'create'])->name('movies.gcreate.index');
 Route::post('/new-genre', [GanreController::class, 'store'])->name('movies.gcreate.store');
+
 Route::get('/new-film', [MovieController::class, 'create'])->name('movies.fcreate.index');
 Route::post('/new-film', [MovieController::class, 'store'])->name('movies.fcreate.store');
 

@@ -21,8 +21,8 @@
         <label for="ganre_id">Műfaj</label>
         <select name="ganre_id" id="ganre_id">
             @foreach($genres as $genre)
-            <option value="{{$subject->id}}">{{$genre->nev}}</option>
-            @enforeach
+            <option value="{{$genre->id}}">{{$genre->nev}}</option>
+            @endforeach
         </select><br>
         <label for="cim">Cím:</label>
         <input type="text" name="cim" id="cim"><br>
