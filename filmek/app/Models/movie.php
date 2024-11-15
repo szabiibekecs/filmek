@@ -11,6 +11,7 @@ class movie extends Model
     protected $fillable = [
         "cim",
         "rendezo",
+        "ganre_id",
         "megjelenes"
     ];
 

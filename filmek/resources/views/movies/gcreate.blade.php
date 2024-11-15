@@ -16,9 +16,11 @@
         {{session('success')}}
     @endif
 
-    <form action="" method="post">
+    <form action="{{route('movies.gcreate.store')}}" method="post">
+        @csrf
         <label for="nev">Név:</label>
-        <input type="text" name="nev" id="nev">
+        <input type="text" name="nev" id="nev"> <br>
+        <input type="submit" value="Feltölt">
     </form>
 </body>
 </html>

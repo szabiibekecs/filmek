@@ -10,10 +10,10 @@ class reserve extends Model
     use HasFactory, SoftDeletes;
 
     protected  $fillable = [ 
-        "foglalo_nev",
-        "movie_id",
-        "kiad",
-        "visszahoz"
+        "nev",
+        "filmid",
+        "be",
+        "ki"
     ];
 
     public function movie(){

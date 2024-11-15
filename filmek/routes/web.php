@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GanreController;
+use App\Http\Controllers\MovieController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -10,6 +11,9 @@ Route::get('/', function () {
 
 Route::get('/new-genre', [GanreController::class, 'create'])->name('movies.gcreate.index');
 Route::post('/new-genre', [GanreController::class, 'store'])->name('movies.gcreate.store');
+Route::get('/new-film', [MovieController::class, 'create'])->name('movies.fcreate.index');
+Route::post('/new-film', [MovieController::class, 'store'])->name('movies.fcreate.store');
+
 
 
 

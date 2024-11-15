@@ -11,8 +11,7 @@ class ganre extends Model
     use HasFactory,SoftDeletes;
 
     protected $fillable = [
-        "movie_id",
-        "mufaj_nev"
+        "nev"
     ];
 
     public function movie(){
